@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Статьи
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+  <h1>Статьи</h1>
+
+  {% for el in articles %}
+  <div class="alert alert-info">
+      <h2>{{ el.title }}</h2>
+      <p>{{ el.intro }}</p>
+      <p><b>Дата: {{ el.date.date() }}</b></p>
+      <button class="btn btn-warning">Читать</button>
+  </div>  
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block nav_link %}
+<li><a href="/home" class="nav-link px-2 text-white">Главная</a></li>
+<li><a href="/about" class="nav-link px-2 text-white">Про нас</a></li>
+<li><a href="/posts" class="nav-link px-2 text-secondary">Статьи</a></li>
+<li><a href="/create-article" class="nav-link px-2 text-white">create-article</a></li>
+{% endblock %}
